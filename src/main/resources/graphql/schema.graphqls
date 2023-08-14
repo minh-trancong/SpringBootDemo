@@ -5,6 +5,13 @@ type User {
     phoneNumber: String
 }
 
+type Stock {
+    id: ID!
+    symbol: String!
+    name: String!
+    currency: String!
+}
+
 type Query {
     allUsers: [User]
     userById(id: ID!): User
@@ -12,4 +19,5 @@ type Query {
 
 type Mutation {
     newUser(name: String!, email: String!, phoneNumber: String!): User
+    newStock(symbol: String!, name: String!, currency: String!): Stock
 }
