@@ -3,8 +3,6 @@ package tradingz.firstproject.controllers;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 import tradingz.firstproject.models.User;
 import tradingz.firstproject.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
