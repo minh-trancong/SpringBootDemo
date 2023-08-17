@@ -1,10 +1,11 @@
 package tradingz.firstproject.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="users")
-public class User {
+public class User implements Serializable {
     public User() {
     }
     public User(String name, String email, String phoneNumber) {

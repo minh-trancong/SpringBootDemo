@@ -58,3 +58,5 @@ public class Stock {
         this.currency = currency;
     }
 }
+
+
