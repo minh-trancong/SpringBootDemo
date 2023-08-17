@@ -26,7 +26,6 @@ public class UserController {
     }
 
     @Autowired
-    @Qualifier("redisTemplate")
     private RedisTemplate<String, String> userTemplate;
     private final ObjectMapper objectMapper = new ObjectMapper();
     @QueryMapping
