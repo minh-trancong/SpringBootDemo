@@ -3,6 +3,7 @@ package tradingz.firstproject.controllers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -25,7 +26,6 @@ public class UserController {
     }
 
     @Autowired
-    @Qualifier("redisTemplate")
     private RedisTemplate<String, String> userTemplate;
     private final ObjectMapper objectMapper = new ObjectMapper();
     @QueryMapping
