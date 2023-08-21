@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="0" author="minhtc@tradingz.io">
+        <sqlFile encoding="utf8" endDelimiter=";"
+                 path="db/changelog/changes/01-init-table.sql"/>
+    </changeSet>
+    <changeSet id="1" author="minhtc@tradingz.io">
+        <sqlFile encoding="utf8" endDelimiter=";"
+                 path="db/changelog/changes/02-change-primary-key-column.sql"/>
+    </changeSet>
+    <changeSet id="2" author="minhtc@tradingz.io">
+        <sqlFile encoding="utf8" endDelimiter=";"
+                 path="db/changelog/changes/03-add-coin-detail-list-mapping.sql"/>
+    </changeSet>
+    <changeSet id="3" author="minhtc@tradingz.io">
+        <sqlFile encoding="utf8" endDelimiter=";"
+                 path="db/changelog/changes/04-add-placeholder-default-list.sql"/>
+    </changeSet>
+    <changeSet id="4" author="minhtc@tradingz.io">
+        <sqlFile encoding="utf8" endDelimiter=";"
+                 path="db/changelog/changes/05-add-sample-data.sql"/>
+    </changeSet>
+</databaseChangeLog>

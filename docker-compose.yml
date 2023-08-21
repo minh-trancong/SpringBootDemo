@@ -1,0 +1,33 @@
+version: '1.0'
+services:
+  coin-info-mysql-mtc:
+    image: mysql:8.1.0
+    container_name: coin-info-mysql-mtc
+    restart: unless-stopped
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=coin_info
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+  coin-info-liquibase-mtc:
+    build: ./common
+    container_name: coin-info-liquibase-mtc
+    depends_on:
+      coin-info-mysql-mtc:
+        condition: service_healthy
+    environment:
+      JDBC_URL: jdbc:mysql://coin-info-mysql-mtc:3306/coin_info?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      JDBC_USERNAME: root
+      JDBC_PASSWORD: ""
+      DRIVER: "com.mysql.cj.jdbc.Driver"
+      CHANGE_LOG_DIR: "master-changelog.xml"
+      LABELS: "run_migration"
+      ACTION: update
